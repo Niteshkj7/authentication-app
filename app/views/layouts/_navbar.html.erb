@@ -1,0 +1,17 @@
+<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+  <a class="navbar-brand" href="/">
+    Authentication App
+  </a>
+  <ul class="navbar-nav ml-auto">
+    <% if Current.user %>
+      <li class="nav-item">
+        <a><%= button_to 'Logout', logout_path, method: :delete, class: "btn btn-outline-primary"%></a>
+      </li>
+    <% else %>
+      <li class="nav-item">
+        <a><%= link_to 'Sign up', sign_up_path, class: "btn btn-outline-primary"%></a>
+        <a><%= link_to 'Login', log_in_path, class: "btn btn-outline-primary" %></a>
+      </li>
+    <% end %>
+  </ul>
+</nav>
